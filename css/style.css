@@ -16,13 +16,16 @@ body {
   margin: 0;
 }
 
+h1, h2, h3, .button_text, .number, .number_number {
+  font-family: OpenSans-Bold;
+}
+
 h1, h2, h3 {
-  font-family: OpenSans-Bold, Arial, sans-serif;
   text-transform: uppercase;
 }
 
-p {
-  font-family: OpenSans-Regular, Arial, sans-serif;
+p, .text_button:first-child {
+  font-family: OpenSans-Regular;
 }
 
 .header {
@@ -130,15 +133,10 @@ p {
 }
 
 .button_text {
-  font-family: OpenSans-Bold, Arial, sans-serif;
   font-size: 2.5vw;
   color: #ffffff;
   text-align: start;
   white-space: nowrap;
-}
-
-.text_button:first-child {
-  font-family: OpenSans-Regular, Arial, sans-serif;
 }
 
 h2 {
@@ -153,27 +151,27 @@ h2 {
   font-size: calc(32px + 5.6vw);
 }
 
-.card_1, .card_2 {
+.card {
   max-width: 100%;
   display: flex;
   margin-left: auto;
   margin-right: auto;
 }
 
-.post_1, .post_2 {
+.post {
   padding: 35px 6.25% 55px 6.25%;
 }
 
-.post_1:nth-of-type(2n), .post_2:nth-of-type(2n) {
+.post_athletes .post:nth-of-type(2n), .post_players .post:nth-of-type(2n) {
   background-color: #F4F3F8;
 }
 
-.post_1:nth-of-type(3n) {
+.post_athletes .post:nth-of-type(3n) {
   background-color: #5C3DB2;
   color: #C1C1C3;
 }
 
-.post_2:nth-of-type(3n) {
+.post_players .post:nth-of-type(3n) {
   background-color: #080A33;
   color: #C1C1C3;
 }
@@ -192,17 +190,16 @@ h3 {
 
 .number {
   font-size: calc(14px + 1.3vw);
-  font-family: OpenSans-Bold, Arial, sans-serif;
   border-bottom: 3px solid #5C3DB2;
   margin-right: 10px;
 }
 
-.post_1:nth-of-type(3n) > .post_title > .number {
+.post_athletes .post:nth-of-type(3n) > .post_title > .number {
   border-bottom: 3px solid #C1C1C3;
   color: #080A33;
 }
 
-.post_2:nth-of-type(3n) > .post_title > .number {
+.post_players .post:nth-of-type(3n) > .post_title > .number {
   border-bottom: 3px solid #C1C1C3;
   color: #5C3DB2;
 }
@@ -238,7 +235,6 @@ h3 {
 
 .number_number {
   font-size: calc(14px + 1.3vw);
-  font-family: OpenSans-Bold, Arial, sans-serif;
   color: #C1C1C3;
   border-bottom: 3px solid #8E75C9;
   padding-bottom: 3px;
@@ -352,7 +348,7 @@ h3 {
     transform: scale(1.05);
   }
 
-  .button:hover .button_logo {
+  .button:hover .button_logo path {
     fill: #5C3DB2;
   }
 
@@ -365,12 +361,12 @@ h3 {
     border: 1px solid transparent;
   }
 
-  .post_1, .post_2  {
+  .post  {
     position: relative;
     z-index: 0;
   }
 
-  .card_1, .card_2  {
+  .card  {
     position: absolute;
     z-index: 2;
   }
@@ -428,21 +424,21 @@ h3 {
     margin-left: 37.76%;
   }
 
-  .post_1 {
+  .post_athletes .post {
     padding: 40px 3.9% 35px 37.76%;
 }
 
-  .card_1 {
+  .card_athletes {
     max-width: 43%;
     top: 85px;
     left: 0;
   }
 
-  .post_2 {
+  .post_players .post {
     padding: 40px 45.57% 35px 3.9%;
   }
 
-   .card_2 {
+  .card_players {
     max-width: 57%;
     top: 45px;
     right: 0;
@@ -466,7 +462,7 @@ h3 {
     margin: 10px 3.9% 100px 3.9%;
   }
 
-   .footer {
+  .footer {
      background-image: url(../sources/img/game_1280.jpg);
      padding-top: 125px;
      padding-left: 3.9%;
@@ -533,14 +529,14 @@ h3 {
   .title_text {
     padding-top: 0;
     padding-left: 0;
-    text-align: end;
+    text-align: right;
   }
 
   .header_button {
     padding-bottom: 110px;
   }
 
-  h2, .sport > h2 {
+  h2 {
     font-size: 3.9vw;
   }
 
@@ -564,21 +560,21 @@ h3 {
     line-height: 28px;
   }
 
-  .post_1 {
+  .post_athletes .post {
     padding: 10px 9.9% 60px 41.67%;
   }
 
-  .card_1 {
+  .card_athletes {
     max-width: 29.48%;
     top: 35px;
     left: 9.9%;
   }
 
-  .post_2 {
+  .post_players .post {
     padding: 10px 50% 60px 9.9%;
   }
 
-   .card_2 {
+  .card_players {
     max-width: 51.6%;
     top: 30px;
     right: 6.25%;
@@ -610,8 +606,8 @@ h3 {
   .number_zone {
     width: 8.64vw;
     height: 8.64vw;
-    left: calc(50% - 8.64vw/2);
-    top: calc(50% - 8.64vw/2);
+    left: calc(50% - 4.32vw);
+    top: calc(50% - 4.32vw);
   }
 
   .sport_text {
@@ -671,7 +667,7 @@ h3 {
     margin-right: auto;
   }
 
-  .post_1:nth-of-type(2n)::after, .post_2:nth-of-type(2n)::after {
+  .post_athletes .post:nth-of-type(2n)::after, .post_players .post:nth-of-type(2n)::after {
     background-color: #F4F3F8;
     content: "";
     position: absolute;
@@ -682,7 +678,7 @@ h3 {
     z-index: -1;
   }
 
-  .post_1:nth-of-type(3n)::after {
+  .post_athletes .post:nth-of-type(3n)::after {
     background-color: #5C3DB2;
     content: "";
     position: absolute;
@@ -693,7 +689,7 @@ h3 {
     z-index: -1;
   }
 
-  .post_2:nth-of-type(3n)::after {
+  .post_players .post:nth-of-type(3n)::after {
     background-color: #080A33;
     content: "";
     position: absolute;
@@ -713,7 +709,7 @@ h3 {
   .number_zone {
     width: 166px;
     height: 166px;
-    left: calc(50% - 166px/2);
-    top: calc(50% - 166px/2);
+    left: calc(50% - 78px);
+    top: calc(50% - 78px);
   }
 }
