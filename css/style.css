@@ -162,18 +162,20 @@ h2 {
   padding: 35px 6.25% 55px 6.25%;
 }
 
-.post_athletes .post:nth-of-type(2n), .post_players .post:nth-of-type(2n) {
+.second {
   background-color: #F4F3F8;
 }
 
-.post_athletes .post:nth-of-type(3n) {
-  background-color: #5C3DB2;
+.third{
   color: #C1C1C3;
 }
 
-.post_players .post:nth-of-type(3n) {
+.post_athletes .third {
+  background-color: #5C3DB2;
+}
+
+.post_players .third {
   background-color: #080A33;
-  color: #C1C1C3;
 }
 
 .post_title {
@@ -194,13 +196,15 @@ h3 {
   margin-right: 10px;
 }
 
-.post_athletes .post:nth-of-type(3n) > .post_title > .number {
+.third .post_title .number{
   border-bottom: 3px solid #C1C1C3;
+
+}
+.post_athletes .third .post_title .number {
   color: #080A33;
 }
 
-.post_players .post:nth-of-type(3n) > .post_title > .number {
-  border-bottom: 3px solid #C1C1C3;
+.post_players .third .post_title .number {
   color: #5C3DB2;
 }
 
@@ -667,7 +671,7 @@ h3 {
     margin-right: auto;
   }
 
-  .post_athletes .post:nth-of-type(2n)::after, .post_players .post:nth-of-type(2n)::after {
+  .second::after {
     background-color: #F4F3F8;
     content: "";
     position: absolute;
@@ -678,8 +682,7 @@ h3 {
     z-index: -1;
   }
 
-  .post_athletes .post:nth-of-type(3n)::after {
-    background-color: #5C3DB2;
+  .third::after {
     content: "";
     position: absolute;
     top: 0;
@@ -688,16 +691,12 @@ h3 {
     bottom: 0;
     z-index: -1;
   }
+  .post_athletes .third::after {
+    background-color: #5C3DB2;
+  }
 
-  .post_players .post:nth-of-type(3n)::after {
+  .post_players .third::after {
     background-color: #080A33;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    right: -50%;
-    bottom: 0;
-    z-index: -1;
   }
 
   .sport_info {
